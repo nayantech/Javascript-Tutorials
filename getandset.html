@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get and set</title>
+</head>
+<body>
+        <h1>Get and set attributer</h1>
+        <a href="https://www.facebook.com/" id="link"  title="facebook-link">facebook</a>
+
+
+        <script>
+            let a=document.getElementById("link");
+            // console.log(a);
+
+            let result=a.getAttribute("href");  //use for get value in tag
+            console.log(result);  
+
+            a.setAttribute("href","https://github.com/");  //it will can set and change in value
+            console.log(a);
+
+            // a.removeAttribute("title");  //it's use for remove any attribute
+            // console.log(a);
+        </script>
+</body>
+</html>

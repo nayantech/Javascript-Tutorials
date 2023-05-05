@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva3</title>
+    <style>
+        
+          *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        canvas{
+            border: 2px solid red;
+            margin: 20px auto 30px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canva1" width="500" height="300"></canvas>
+
+    <script>
+        let a=document.getElementById("canva1");
+        let ctx1=a.getContext("2d");
+
+        let rgrad=ctx1.createRadialGradient(250,200,90,250,200,10);   //here(x,y,radius,x(same),y(same),radius)
+
+        rgrad.addColorStop(0,"orange");
+        rgrad.addColorStop(0.2,"blue");
+        rgrad.addColorStop(0.4,"red");
+        rgrad.addColorStop(0.6,"pink");
+        rgrad.addColorStop(0.8,"brown");
+        rgrad.addColorStop(1,"green");
+
+        ctx1.fillStyle=rgrad;
+        ctx1.arc(250,200,90,0,2*Math.PI);   //here(x,y,radius)
+        // ctx1.arc(250,200,90,1*Math.PI,2*Math.PI);
+
+        ctx1.fill();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>encapsulation</title>
+    </head>
+    <body>
+        <p>
+            Encapsulation:-
+            encapsulation is the bundling of data and the methods that act on that data such that access to the  data is restricted from outside the bundle.
+            encapsulation allow us to control and validate the data.
+            we can manage read and write access of objects's properties by using encapsulation.
+            Read Only Access: if we declare getter methods only then it facilitates the read only access.
+            write only access: if we declare setter methods only then it facilitates the write only access.
+            Read and write access : if we declare both getter and setter methods then it facilitates both read and write access.
+            the main advantages of using encapsulation in javascript is to provide security to the data. other benefits of encapsulation include:
+            encapsulation guards an object against illegal access.
+            encapsulation helps to achieve a level without revealing its complex details.
+            this will reduce human errors.
+            make the application more flexible and manageble.
+            simplifies the application
+            Conslusion:
+            encapsulation is the tool in javascript which can be used to make the complex operation easy and manageble with making the overall application secure and easy to work
+        </p>
+        <script>
+            class Bank{
+                Cname;
+                Accno;
+
+                #Bal;
+                constructor(cname,accno,bal=0,actype){
+                    if(this.constructor == Bank){
+                        throw new Error("object of Abstract Class cannot be created")
+                    }
+                    this.Accno=accno;
+                    this.Cname=cname;
+                    this.#Bal=bal;
+                    this.actype=actype;
+                }
+
+                //not in code
+                // #Deposit(amount){
+                    // if(typeof amount != typeof.#Bal){
+                    //     alert("This is not acceptable.")
+                    // }
+                    // else{
+                    //     this.#Bal += amount;
+                    // }
+                // }
+
+                #Deposit(amount){
+                    if(amount <1){
+                    alert("please provide valid amount");
+                }
+                else{
+                    this.#Bal += Number(amount);
+                }
+                
+                
+                //# means private not access by object
+            }
+                #Withdrawal(amount){
+                    if(amount < 1){
+                        alert("invalid inputs");
+                    }
+                    else if(this.#Bal >= amount){
+                        this.#Bal -=amount;
+                    }
+                    else{
+                        alert("insufficient Balanace")
+                    }   
+
+            }
+
+            //it's a setter method which is publically available for user.
+
+            set Cashier_D(amount){
+                return this.#Deposit(amount);
+
+            }
+            set Cashier_W(amount){
+                return this.#Withdrawal(amount);
+            }
+
+            //it's a getter method to get some data
+            get Balance(){
+                return `Your current Balance is ${this.#Bal}`;
+            }
+        }
+
+
+        //inheritance
+        class AcOpeningCounter extends Bank{
+            constructor(cname,accno,bal,actype="Saving Ac"){
+                super(cname,accno,bal,actype);
+                
+            }
+        }
+
+        
+
+        //in this array we will stored all the customer information of the bank.
+        const AccHolders = [];
+        
+        
+
+        const u1 =new AcOpeningCounter("naresh",101);
+        const u2 =new AcOpeningCounter("sneha",103,1500,"current");
+        
+        // u1.#Bal = 10;
+        // u1.#Deposit(100);
+        console.table(u1);
+
+        AccHolders.push(u1);
+        AccHolders.push(u2);
+        console.table(AccHolders);
+
+        u1.Cashier_D = "300";
+        // console.table(AccHolders);
+
+        u1.Cashier_W = 100;
+        console.table(AccHolders);
+
+        console.log(u1.Balance);
+
+        </script>
+    </body>
+    </html>
+
+    

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            width: 60%;
+            height: 200px;
+            margin: 0 auto;
+            border: 1px solid red;
+            transition: all 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <section id="sec">
+
+    </section>
+
+    <button type="button">add</button>
+    <button type="button">remove</button>
+
+    <script>
+        let btn =document.querySelectorAll("button");
+
+        // console.log(btn);
+
+        btn[0].addEventListener("click",()=>{
+            let sec=document.getElementById("sec");
+
+            sec.style.border="15px double green";
+            sec.style.backgroundColor = "yellow";
+        })
+
+        btn[1].addEventListener("click",()=>{
+            let sec=document.getElementById("sec");
+
+            sec.style.border="";
+            sec.style.backgroundColor="";
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bom in History object</title>
+</head>
+<body>
+    <button type="button" onclick="moveback()">Back</button>
+    <button type="button" onclick="moveforward()">Forward</button>
+    <button type="button" onclick="movego()">GO</button>
+    <script>
+        function moveback(){
+            history.back(3);
+        }
+        function moveforward(){
+            history.forward();
+        }
+        function movego(){
+            history.go(2);   //here 2 mean go direct 2nd page
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abstraction</title>
+</head>
+<body>
+    <script>
+        class Manager{
+            constructor(){
+                if(this.constructor == Manager){
+                    throw new Error("Object of Abstraction class cannot be created");
+                }
+            }
+            display(){
+                throw new Error("Abstraction Method has no implementation");
+            }
+        }
+
+        // let u1=new Manager();
+
+        class Employee extends Manager{
+            display(){
+                // super.display();
+                console.log("Employee is selected.");
+            }
+            
+        }
+
+        let em=new Employee();
+        em.display();
+    </script>
+</body>
+</html>

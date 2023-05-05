@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <style>
+        form{
+            width: 40%;
+            height: 400px;
+            text-align: center;
+            margin: 0 auto;
+            /* background-image: url("saturn.jpg"); */
+            /* background-image: linear-gradient(red,blue,green); */
+           
+        }
+        fieldset{
+            background-color: aqua;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- learn this validation and practise again -->
+    <form action="welcome.html" method="post" onsubmit="return validate()">
+    <fieldset>
+        <legend>Registration form</legend>
+        <label for="">Username:<br>
+        <input type="text" name="uname" id="un" placeholder="Enter your name" maxlength="15"><br>
+        <span></span>
+    </label><br><br>
+
+    <label>Password:<br>
+        <input type="text" name="pass" id="pass" placeholder="Enter your password" maxlength="8"><br>
+        <span></span>
+    </label><br><br>
+
+    <label>Confirm-Password:<br>
+        <input type="text" name="cpass" id="cp" placeholder="Confirm your password" maxlength="8"><br>
+        <span></span>
+    </label><br><br>
+
+    <label>Email-id:<br>
+        <input type="text" name="email" id="email" placeholder="Enter Your E-mail id"><br>
+        <span></span>
+    </label><br><br>
+
+    <label>Mobile number: +91<br>
+        <input type="tel" name="num" id="num" placeholder="Enter Your 10 digit number"
+        maxlength="10"><br>
+        <span></span>
+    </label><br><br>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+
+    </fieldset>
+
+    </form>
+    <script>
+        function validate(){
+            let user=document.getElementById("un").value;
+            let pass=document.getElementById("pass").value;
+            let cpass=document.getElementById("cp").value;  
+            let email=document.getElementById("email").value
+            let mob=document.getElementById("num").value;
+            let spanmsg=document.querySelectorAll("span");
+        
+        
+
+        //validation for username
+
+        if(user == ""){
+            spanmsg[0].innerHTML="Fields cannot be empty";
+            return false;
+        }
+        else if(!isNaN(user)){
+            spanmsg[0].innerHTML="Invalid inputs numbers are not allowed.";
+            return false;
+        }
+        else{
+
+            spanmsg[0].innerHTML="";
+        }
+
+        //for password
+        if(pass.length<8 || pass==""){
+            spanmsg[1].innerHTML="Minimum 8 characters are required and it must be combination of uppercase,lowercase,numberes and symbols.";
+            return false;
+        }
+        else if(pass.search(/[a-z]/)==-1  || pass.search(/[A-z]/)==-1  || pass.search(/[0-9]/)==-1 || pass.search(/[@/!/*]/)==-1){
+            spanmsg[1].innerHTML="Atleast 1 losercase, 1 uppercase and 1special character is required.";
+            return false;
+        }
+        else{
+            spanmsg[1].innerHTML="";
+        }
+
+        //for conform password field.
+
+        if(cpass==""){
+            spanmsg[2].innerHTML="please fill the empty space with your password.";
+            return false;
+        }
+        else if(cpass !== pass){
+            spanmsg[2].innerHTML="password in not matching ";
+            return false;
+        }
+        else{
+            spanmsg[2].innerHTML="";
+        }
+        //for email
+
+        if(email==""){
+            spanmsg[3].innerText="⚠ Warning! email cannot be empty...";
+            // spanmsg[3].style.color="red";
+            return false;
+        }
+        else if(email.indexOf("@")<=1){
+            spanmsg[3].innerText="⚠ Warning! invalid email..";
+            // spanmsg[0].style.color="red";
+            return false
+        }
+
+        else if(email.charAt(email.length-4) != "." && email.charAt(email.length-3) !="."){
+            spanmsg[3].innerText="⚠ Warning! invalid email...";
+            return false;
+        }
+
+        else{
+            spanmsg[3].innerText="";
+        }
+
+        //validation for mobile
+
+        if(mob == ""){
+            spanmsg[4].innerHTML="Mobile number is madatory"
+            return false;
+        }
+        else if(isNaN(mob) || mob.length<10){
+            spanmsg[4].innerHTML="invalid inputs";
+            return false;
+        }
+        else{
+            spanmsg[4].innerHTML="";
+        }
+    }
+    </script>
+</body>
+</html>

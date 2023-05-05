@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom1</title>
+</head>
+<body>
+    <h1>Dom (Document object model) </h1>
+    <section id="container" class="se1">
+        <h1 class="p2">WE can get any element using dom</h1>
+        <p id="p1">we can manipulate any element using there dom method too like inner HTML and inner TEXT even we can add CSS to an existing element using javascript Dom</p>
+        <p class="p2">There are different way by which we can select any element in dom
+            <hr>
+            By name,id,tagname,class,quaryselector and queryselectorAll.
+        </p>
+        <input type="text" id="input1" name="un">
+    </section>
+
+
+    <script>
+        let a = document.getElementsByTagName('h1')[0]
+        console.log(a);
+        let b = document.getElementsByName("un")[0];
+        console.log(b)
+        b.value = 'himanshu';
+        console.log(b.value);
+
+        let c = document.getElementById('p1');
+        console.log(c);
+
+        c.innerText = "Javascript DOM";   // text camelcaseing me hoga
+        c.innerHTML = '<strong>Javascript</strong>';  // innerHTML ye capital letter hi rhega.
+
+        let d= document.getElementsByClassName('p2');
+        console.log(d[0]);
+        console.log(d[1]);
+        console.log(d[0].innerText);
+
+        // let sec = document.querySelector('section');
+        // console.log(sec);
+        // let sec = document.querySelector('#container');
+        // console.log(sec);
+        let sec = document.querySelector('.se1');
+        console.log(sec);
+    </script>
+</body>
+</html>

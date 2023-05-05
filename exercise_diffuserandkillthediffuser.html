@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffuser and kill the diffuer</title>
+</head>
+<body>
+    <!-- do mini changes here -->
+    <button type="button" id="btn1">difuser</button>
+    <button type="button" id="btn2">kill the difuser</button>
+    <div id="mydiv"></div>
+
+    <script>
+        let place=document.getElementById("mydiv");
+        let cnumber=()=>{
+            let count="boom";
+            place.innerText=count;
+        }
+        let timeboom=setTimeout(cnumber,4000);
+
+        let bomber=()=>{
+            clearTimeout(timeboom);
+        }
+
+        let btn1=document.getElementById("btn1");
+        btn1.addEventListener("click",bomber)
+
+        
+        let btn2=document.getElementById("btn2");
+        btn1.addEventListener("click",()=>{
+            btn1.removeEventListener("click",bomber)
+        })
+    </script>
+</body>
+</html>

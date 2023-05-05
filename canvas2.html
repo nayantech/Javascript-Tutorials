@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas2</title>
+    <style>
+          *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        canvas{
+            border: 2px solid red;
+            margin: 20px auto 30px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canva1" width="500" height="300"></canvas>
+
+    <script>
+        let canva1=document.getElementById("canva1");
+        let ctx1=canva1.getContext("2d");
+
+        let grad=ctx1.createLinearGradient(0,0,0,120); //here we are provideing direction to color (x,y,x1,y1)
+
+        grad.addColorStop(0,"orange");
+        grad.addColorStop(0.2,"blue");
+        grad.addColorStop(0.4,"red");
+        grad.addColorStop(0.6,"pink");
+        grad.addColorStop(0.8,"brown");
+        grad.addColorStop(1,"green");
+
+
+        ctx1.fillStyle=grad;
+        ctx1.fillRect(0,0,220,120);  //(here (x,y,width,height))
+
+
+        ctx1.strokeStyle=grad;
+        ctx1.font="40px cursive";
+        ctx1.fillText("Nayan",250,50,200);  //here(x,y,size)
+        
+        ctx1.strokeText("Nayan",180,165,200);
+    </script>
+</body>
+</html>

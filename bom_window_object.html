@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bom in Window Object</title>
+</head>
+<body>
+    <button type="button" onclick="wnopen()">open Window</button>
+    <button type="button" onclick="wnclose()">close Window</button>
+    <button type="button" onclick="moveto()">moveto</button>
+    <button type="button" onclick="moveby()">moveby</button>
+    <script>
+
+        //here window open new tab with website
+        let win;
+        function wnopen(){
+            win=window.open("https://www.geeksforgeeks.org/how-to-install-mysql-workbench-on-ubuntu/","","width=200px,height=200px,top=500px");
+
+            // win=window.open("https://www.geeksforgeeks.org/how-to-install-mysql-workbench-on-ubuntu/","")  //here this open new window tab full sized by default
+        }
+         
+        //here same upper window tab close
+        // function wnclose(){
+        //     win.window.close("https://www.geeksforgeeks.org/how-to-install-mysql-workbench-on-ubuntu/")
+        // }
+
+
+        let win1;
+        function moveto(){
+            win1=window.open("","","width=200px,height=200px");
+            win1.document.write("<p>My window is moving</p>")
+            win1.moveto(400,100);
+        }
+      
+        function moveby(){
+            win1.moveBy(100,100)   //here in moveBy in "B" is big  //here we not write after 100 is pixel they take direct number 
+        }
+        function wnclose(){
+            win1.window.close()
+        }
+
+        
+    </script>
+</body>
+</html>

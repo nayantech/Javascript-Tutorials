@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adding data by using funciton and call it</title>
+</head>
+<body>
+    <script>
+        const a={
+            name:"nayan",
+            lname:"gupta",
+            age:21,
+            hobbies:{sport:["badminton","cycling"]},
+            fullname:function(){
+            return this.name +" "+ this.lname;
+        }
+        }
+        // console.log(a["hobbies"].sport[0]);  for printing object in object
+        // console.log(a);
+       
+        console.log(a.fullname());
+
+
+        // practise here up code
+            // const a={
+            //     name:"nayan",
+            //     last:"Gupta",
+            //     age:21,
+            //     hobbies:{sport:["badminton","cycling"]},
+            //     fullname:function (){
+            //         return this.name +" "+ this.last;
+            //     }
+            // }
+            // console.log(a.fullname());
+
+    </script>
+</body>
+</html>

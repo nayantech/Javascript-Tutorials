@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class and inheritance</title>
+</head>
+<body>
+    <script>
+        class MobilePhones{             //here class is created MobilePhones name
+            constructor(name,price){
+                this.Name=name;
+                this.Price=price;
+                //console.log("mobile activated");
+            }
+            alldetails(){                   //here method(function) perform
+                return `Device Name: ${this.Name} <br>
+                Price: ${this.Price} <br>`;
+            }
+        }
+
+        let s1=new MobilePhones(`Samsung S2`,40000);                //here s1 name object created to call class name
+        document.write(s1.alldetails(),"<br>");
+
+
+        class Laptops extends MobilePhones{
+            constructor(name,price,ram){
+                super(name,price);                                         //here super means taking this from uppar patent class 
+                this.ram=ram;
+                // console.log("laptops activated");
+
+            }
+            lapdetails(){
+                return`Device Name:${this.Name} <br>
+                Price:${this.Price} <br> Ram:${this.ram} <br>`
+            }
+
+
+        }
+
+        let l1= new Laptops("hp",50000,"6gb");
+        document.write(l1.lapdetails(),"<br>");
+
+
+        class iphone extends Laptops{
+            constructor(name,price,ram,color,os){
+                super(name,price,ram);
+                this.Color=color;
+                this.Os=os;
+                // console.log("laptops activated");
+
+            }
+            iphonedetails(){
+                return`Device Name:${this.Name} <br>
+                Price: ${this.Price} <br> Ram: ${this.ram} <br> Color: ${this.Color} <br> Os: ${this.Os} <br><br>`
+            }
+
+
+        }
+
+        let ip1= new iphone("iphone 15 pro",10000,"8gb","white","ios");
+        document.write(ip1.iphonedetails(),"<br> <br>");
+
+        // document.write(s1.alldetails(),"<br>",l1.lapdetails(),"<br>",ip1.iphonedetails()); 
+    </script>
+</body>
+</html>

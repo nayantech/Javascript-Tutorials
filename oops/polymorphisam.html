@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymorphisam</title>
+</head>
+<body>
+    <p>what are Abstract Classes?
+        Abstraction classes can be defined an classes that cannot be instantiated i.e. whose object references cannot be created.
+        An abstract method is a method that can only be inherited and require subclasses to provide implementation for the method declared in the abstract class.
+
+    </p>
+    <script>
+        class Bank{
+            constructor(accno,cname,bal=0){
+                if(this.constructor == Bank){
+                    throw new Error("object of abstract class cannot be created")
+                }
+                this.Accno=accno;
+                this.Cname=cname;
+                this.Bal=Number(bal);   //here Number use for if user pur value in string number so convert in number easily
+            }
+            deposit(amount){
+                if(amount < 1){
+                    alert("please provide valid amount.");
+                }
+                else{
+                    this.Bal += amount;
+                }
+            }
+
+            withdraw(amount){
+                if(amount < 1){
+                    alert("invalid inputs");
+                }
+                else if(this.Bal >= amount){
+                    this.Bal -= Number(amount);
+                }
+                else{
+                    alert("insufficient Balance")
+                }
+            }
+        }
+
+        const Bankdb= [];
+
+        // let u1= new Bank(101,"naresh",1000);
+        // console.log(u1.Bal = 100);
+        // console.log(u1);
+
+        class CurrentAc extends Bank{
+            constructor(accno,cname,bal,actype="current Ac"){
+                super(accno,cname,bal);
+                this.Actype=actype;
+            }
+            deposit(amount){
+                super.deposit(amount);
+            }
+            withdraw(amount){
+                super.withdraw(amount);
+            }
+        }
+
+        class SavingAc extends Bank{
+            constructor(accno,cname,bal,actype="saving Ac"){
+                super(accno,cname,bal);
+                this.Actype=actype;
+            }
+            deposit(amount){
+                super.deposit(amount);
+            }
+            withdraw(amount){
+                super.withdraw(amount);
+            }
+        }
+
+        let u1 = new CurrentAc(101,"naresh");
+        Bankdb.push(u1);
+        console.table(Bankdb);
+        u1.deposit(1000);
+        // console.table(Bankdb);
+        // u1.withdraw(200);
+
+        let u2=new SavingAc(102,"ram","700");
+        Bankdb.push(u2);
+        console.table(Bankdb);
+        // u2.withdraw(100);
+        // console.table(Bankdb)
+        
+    </script>
+</body>
+</html>

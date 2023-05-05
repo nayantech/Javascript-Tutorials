@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abstraction with qurey</title>
+</head>
+<body>
+    <script>
+        class Manager{
+            constructor(){
+                if(this.constructor == Manager){
+                    throw new Error("Object of Abstraction class cannot be created");
+                }
+            }
+            display(query){
+               
+               
+
+                if(query == "leave"){
+                    console.error("Not possible.");
+                }
+                else if(query == "increment"){
+                    console.error("1st i will check your montly performance and let you know.")
+                }
+                else {
+                    console.log("leave your resignation")
+                }
+            }
+        }
+
+        // let u1=new Manager();
+
+        
+            
+        class OfficeHead extends Manager{
+
+            
+            display(query){
+                return super.display(query);
+            }
+        }
+        
+
+        
+
+        let e1=new OfficeHead();
+        // e1.display();
+        e1.display("leave");
+        // e1.display("increment");
+        // e1.display("i want holiday")
+
+    </script>
+</body>
+</html>

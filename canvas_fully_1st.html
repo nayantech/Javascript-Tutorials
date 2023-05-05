@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas_fully_1st</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+            /* margin: 20px auto 30px; */
+        }
+        canvas{
+            border: 10px solid red;
+            margin: 20px auto 30px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drawing a rectangle using canvas</h1>
+    <canvas id="canva1" width="500" height="300"></canvas>
+
+    <h1>Drawing a circle using canvas</h1>
+    <canvas id="canva2" width="500" height="300"></canvas>
+
+    <h1>Drawing a line using canvas</h1>
+    <canvas id="canva3" width="500" height="300"></canvas>
+
+    <script>
+        let canva1=document.getElementById("canva1");
+        let ctx= canva1.getContext("2d");
+        ctx.fillStyle="purple";         //here s is big
+
+        ctx.fillRect(150,80,200,180);   //here R is big(x,y,width,height)
+
+        ctx.strokeStyle="black";
+        ctx.strokeRect(140,70,200,100);
+        ctx.clearRect(140,70,200,100);
+
+
+
+
+
+
+        
+        let canva2=document.getElementById("canva2");
+        let ctx2= canva2.getContext("2d");
+
+        ctx2.fillStyle="yellow";
+        ctx2.beginPath();
+        ctx2.arc(250,150,140,0,2* Math.PI);
+
+        ctx2.stroke();
+        // ctx2.fill();
+
+
+
+
+
+
+        //today date 22 fed 23
+
+        let canva3=document.getElementById("canva3");
+        let ctx3= canva3.getContext("2d");
+
+
+        ctx3.lineWidth=10   //here border width increases
+        ctx3.strokeStyle="blue"   //here border color provided
+        ctx3.moveTo(0,0);
+        ctx3.lineTo(500,300);
+        ctx3.stroke();
+
+        ctx3.moveTo(0,300);
+        ctx3.lineTo(500,0);
+        ctx3.stroke();
+
+        ctx3.moveTo(250,0);
+        ctx3.lineTo(250,300);
+        ctx3.stroke();
+
+        ctx3.moveTo(0,150);
+        ctx3.lineTo(500,150);
+        ctx3.stroke();
+
+        
+    </script>
+</body>
+</html>

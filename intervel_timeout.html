@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intervel timeout</title>
+</head>
+<body>
+    <button id="btn1">diffuse</button>
+
+    <div id="mydiv">
+
+
+    </div>
+
+    <!-- <div id="mydiv">
+
+
+    </div> -->
+
+   
+    <script>
+
+        let b=document.getElementById("mydiv");
+        let count=0;
+        let cnumber2 = ()=>{
+            b.innerText=count++;
+        }
+
+        let counter = setInterval(cnumber2,1000);
+
+
+
+
+
+        // let cnumber=()=>{
+        //     let count="boom";
+        //     a.innerText=count;
+        // }
+
+        let btn1=document.getElementById("btn1");
+        btn1.addEventListener("click",()=>{
+            // clearInterval(timeboom);
+            clearInterval(counter);
+        })
+        // let timeboom=setInterval(cnumber,1000);
+    </script>
+</body>
+</html>

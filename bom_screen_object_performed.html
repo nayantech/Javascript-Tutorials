@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bom screen object performed</title>
+    <style>
+        *{
+            width: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div{
+            width: 1920px;
+            /* height: 937px; */
+            height: 143;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button type="button" onclick="showresult()">showDetails</button>
+    </div>
+    <script>
+        function showresult(){
+        let scrwidth=window.screen.width;
+        let awidth=screen.availWidth
+        let scrheight=window.screen.height;
+        let aheight=screen.availHeight;
+
+        document.write("innerwidth",window.innerWidth,"<br>");
+        document.write("innerheight",window.innerHeight,"<br>");
+
+        document.write("scrwidth",scrwidth,"<br>");
+        document.write("awidth",awidth,"<br>");
+        document.write("scrheight",scrheight,"<br>");
+        document.write("aheight",aheight,"<br>");
+
+
+            
+        }
+    </script>
+</body>
+</html>

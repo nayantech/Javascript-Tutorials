@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse event</title>
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section{
+            display: flex;
+          
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+
+        }
+        img{
+            border: 2px solid red;
+            width: 300px;
+            height: 300px;
+            transform: rotate(0deg) scale(1);
+            transition: all 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- here mini changes do -->
+   <section id="sec">
+    <h1>Mouse events</h1>
+    <img src="Doraemon.png" alt="saturn" id="img1">
+   </section>
+
+   <script>
+    let img = document.getElementById("img1");
+    img.addEventListener("dblclick", function (){
+        img.style.transform="rotate(360deg)"
+    });
+
+    img.addEventListener("mouseover", function (){
+        img.style.transform="scale(1.4)"
+    });
+
+    img.addEventListener("dblclick", function (){
+        img.style.transform="scale(1)"
+    });
+
+    img.addEventListener("contextmenu", function (){
+        img.style.transform="translateX(-300px)"
+    });
+
+    img.addEventListener("mousedown", function (){
+        img.style.transform="translateX(300px)"
+    });
+   </script>
+</body>
+</html>

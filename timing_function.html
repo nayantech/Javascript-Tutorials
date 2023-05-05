@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timing function</title>
+</head>
+<body>
+    <button id="btn1">diffuse</button>
+    <div id="mydiv">
+
+
+    </div>
+
+    <div id="mydiv2">
+
+
+    </div>
+
+    <script>
+
+        //settimeout
+    let a=document.getElementById("mydiv");
+
+        // setTimeout();
+
+        // let cnumber=()=>{
+        //     let count=0;
+        //     a.innerText=count;
+        // }
+
+        // setTimeout(cnumber,1000);  //call back function - function in function is called call back function
+       
+
+        // setintervel
+
+        let b=document.getElementById("mydiv2");
+        let count=0;
+        let cnumber2 = ()=>{
+            b.innerText=count++;
+        }
+
+        setInterval(cnumber2,1000);
+
+
+            //diffuse 
+        // let cnumber=()=>{
+        //     let count="boom";
+        //     a.innerText=count;
+        // }
+
+        // let btn1=document.getElementById("btn1");
+        // btn1.addEventListener("click",()=>{
+        //     clearTimeout(timeboom);
+        // })
+        // let timeboom=setTimeout(cnumber,4000);
+    </script>
+</body>
+</html>
